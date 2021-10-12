@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+<div class="container rounded bg-white mt-5 mb-5">
+  <form #profileForm='ngForm'>
+    <div class="row">
+      <div class="col-md-3 border-right" style="border: 1px solid green;">
+        <div class="d-flex flex-column align-items-center text-center p-2"><img class="rounded-circle mt-5"
+            width="150px"
+            src="{{userProfile.imageUrl}}" alt="User Image">
+
+            <span class="font-weight-bold">User Id : {{userProfile.id}}<span> </span></span><br>
+          <span class="font-weight-bold">Full Name : {{userProfile.firstName+" "+ userProfile.lastName }}<span></span></span> <br>
+          <span class="font-weight-bold">User Type : {{userProfile.role}}<span> </span></span><br>
+          <span class="font-weight-bold">Country : {{userProfile.country}}<span> </span></span><br>
+          <span class="font-weight-bold">State : {{userProfile.state}}<span> </span></span><br>
+          <span class="font-weight-bold">City : {{userProfile.city}}<span> </span></span><br>
+          <span class="font-weight-bold">Address : {{userProfile.address}}<span> </span></span><br>
+          <span class="font-weight-bold">EmailId : {{userProfile.email}}<span> </span></span>
+          <span class="font-weight-bold">Date of Birth : {{userProfile.dob}}<span> </span></span>
+          
+
+        </div>
+      </div>
+      <div class="col-md-8 border-right" style="border:1px solid yellow;">
+        
+        <div class="py-5" style="margin-top: 100px; padding-left: 25px;padding-right: 10px;">
+            <h4 class="text-center">Edit Profile</h4>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" name="firstName"
+                placeholder="Enter your first name" ngModel required></div>
+            <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" name="lastName" ngModel required
+                placeholder="Enter your lastname"></div>
+          </div>
+          <div class="row mt-3">
+            
+            
+            
+                <input type="number" name="id" ngModel='{{userProfile.id}}' hidden>
+                <input type="text" name="email" ngModel='{{userProfile.email}}' hidden>
+                <input type="text" name="password" ngModel='{{userProfile.password}}' hidden>
+                <input type="text" name="role" ngModel='{{userProfile.role}}' hidden>
+                
+          </div>
+          <div class="row mt-3">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label for="Street">Country</label>
+                    <select name="country" class="countries form-control" id="countryId" style="width: 250px" ngModel required>
+                        <option value="">Select Country</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select name="state" class="states form-control" id="stateId" style="width: 250px" ngModel required>
+                        <option value="">Select State</option>
+                </select>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select name="city" class="cities form-control" id="cityId" style="width: 250px" ngModel required>
+						<option value="">Select City</option>
+					</select>
+                </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control"
+                placeholder="enter your address line" name="address" ngModel required></div>
+          </div>
+          
+          <div class="row mt-2">
+            <div class="col-md-6"><label class="labels">Date of Birth</label><input type="date" class="form-control" name="dob"
+                placeholder="Enter your first name" ngModel required></div>
+            <div class="col-md-6"><label class="labels">Choose Image</label><input type="text" class="form-control" name="imageUrl"
+                placeholder="Enter your lastname" ngModel required></div>
+          </div>
+
+          <div class="mt-5 text-center"><button class="btn btn-outline-primary" [disabled]='profileForm.invalid' (click)='updateProfile(profileForm)'>Update Profile</button></div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+

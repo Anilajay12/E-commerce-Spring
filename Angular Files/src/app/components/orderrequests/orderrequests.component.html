@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <u><h4>Your Order Requests</h4></u>
+                    
+                </div>
+                
+                <div class="card-body">
+                    <div class="table-responsive" id="proTeamScroll" tabindex="2" style="height: 400px; overflow: hidden; outline: none;">
+                        <table class="table table-striped fixed">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Produt Name</th>
+                                    
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of pendingOrders">
+                                    <td class="table-img">{{product.userId}}
+                                    </td>
+                                    <td>
+                                        <h6 class="mb-0 font-13">{{product.productName}}</h6>
+                                        
+                                    </td>
+                                    
+                                    <td class="text-truncate">
+                                        <ul class="list-unstyled order-list m-b-0">
+                                            <li class="team-member team-member-sm">{{product.price}}</li>
+                                            
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <div class="badge-outline col-red">{{product.quantity}}</div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <div class="progress-text">{{product.total}}</div>
+                                    </td>
+                                    <td>
+                                        
+                                        <a data-toggle="tooltip" title="" data-original-title="Edit">Pending</a>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

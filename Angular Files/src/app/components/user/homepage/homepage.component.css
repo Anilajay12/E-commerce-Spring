@@ -1,0 +1,18 @@
+.container{
+    width: 75%;
+    height: 75vh;
+    margin-top: 5%;
+  }
+  .carousel-inner{
+    width: 100%;
+    border: 1px solid seagreen;
+  }
+  .carousel-inner img{
+    height: 75vh;
+    width: 100%;    
+    padding:2% 2% 0 2%;
+    margin-bottom: 1%;
+  }
+  .carousel-control-prev-icon{
+    opacity: 75;
+  }

@@ -1,0 +1,11 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 2;
+  height: 1px;
+  background: #eee;
+}
+a{
+  padding-left: 10%;
+}
+
